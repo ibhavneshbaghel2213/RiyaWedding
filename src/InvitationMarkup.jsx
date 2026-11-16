@@ -153,14 +153,14 @@ export default function InvitationMarkup() {
 </section>
 </main>
 <footer className="footer"><div className="section-inner"><p className="eyebrow">{t("सादर प्रेषक", "With regards")}</p>
-<h2 className="section-heading">{t("आपके अपने", "Your hosts")}</h2>
+<h2 className="section-heading">{t("पाल परिवार", "Pal Family")}</h2>
 <div className="ornate-divider" aria-hidden="true"><span>{"❋"}</span>
 </div>
-<RichText as="p" className="footer-address" html={values.footerHosts} />
+<p className="footer-invitation footer-invitation-lead">{t("सम्पूर्ण पाल परिवार की ओर से स्नेह, सादर एवं हार्दिक शुभकामनाएँ।", "With heartfelt love, warm regards, and best wishes from the entire Pal Family.")}</p>
+<p className="footer-invitation">{t("पाल परिवार इस शुभ विवाह समारोह में आपकी गरिमामयी उपस्थिति एवं आशीर्वाद हेतु सादर आमंत्रित करता है। आपका स्नेह, शुभकामनाएँ और उपस्थिति इस आनंदमय अवसर को और भी यादगार बनाएँगे।", "The Pal Family cordially invites you to grace this auspicious wedding celebration with your gracious presence and blessings. Your love, good wishes, and presence will make this joyous occasion even more memorable.")}</p>
 <a className="btn btn-outline" id="shareLink" target="_blank" rel="noopener noreferrer" href={shareUrl}><span aria-hidden="true">{"↗"}</span>
 <span>{t("WhatsApp पर निमंत्रण साझा करें", "Share on WhatsApp")}</span>
 </a>
-<p className="footer-credit">{t("पाल परिवार की ओर से स्नेह, सादर एवं शुभकामनाएँ।", "With love, regards and best compliments from Pal Family.")}</p>
 <p className="footer-phones"><a id="phoneOne" href={"tel:" + CONFIG.phones[0]}>{CONFIG.phones[0]}</a>
 {" · "}<a id="phoneTwo" href={"tel:" + CONFIG.phones[1]}>{CONFIG.phones[1]}</a>
 </p>

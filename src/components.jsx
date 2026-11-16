@@ -8,8 +8,6 @@ const localDate = iso => {
   const [year, month, day] = dateParts(iso);
   return new Date(year, month - 1, day);
 };
-const splitHostAddress = address => address.replace(', ', ',<br>');
-
 export function WeddingProvider({ children }) {
   const [language, setLanguage] = useState('en');
   const [playing, setPlaying] = useState(false);
@@ -42,9 +40,6 @@ export function WeddingProvider({ children }) {
     venueAddress: t(CONFIG.venue.address, CONFIG.venue.addressEnglish),
     wellWishers: t(CONFIG.family.wellWishers, CONFIG.family.wellWishersEnglish),
     kidsNames: (language === 'hi' ? CONFIG.children : CONFIG.childrenEnglish).join(', '),
-    footerHosts: language === 'hi'
-      ? `<strong>${CONFIG.hosts[0]}</strong>${CONFIG.hostTitle ? ` (${CONFIG.hostTitle})` : ''}<br><strong>${CONFIG.hosts[1]}</strong><br>${splitHostAddress(CONFIG.hostAddress)}`
-      : `<strong>${CONFIG.hostsEnglish[0]}</strong>${CONFIG.hostTitleEnglish ? ` (${CONFIG.hostTitleEnglish})` : ''}<br><strong>${CONFIG.hostsEnglish[1]}</strong><br>${splitHostAddress(CONFIG.hostAddressEnglish)}`,
     soundLabel: playing
       ? t('ध्वनि बंद करें', 'Sound Off')
       : autoplayBlocked
@@ -129,7 +124,7 @@ export function WeddingProvider({ children }) {
 
   const mapsUrl = CONFIG.mapsLink !== 'ADD_MAPS_LINK' ? CONFIG.mapsLink : '#';
   const shareUrl = `https://wa.me/?text=${encodeURIComponent(
-    `सादर आमंत्रण! ऋषिता  एवं रवि के शुभ विवाह में पधारकर नवयुगल को आशीर्वाद दें। ${CONFIG.wedding.dateHindi}`,
+    `WEDDING INVITATION\n\nWith immense joy, we invite you to celebrate the wedding of Rishita & Ravi.\n\nYour presence and blessings will make our special day even more memorable.\n\nDate: 11th December 2026 (Friday)\n\nWith love and regards,\nThe Pal Family\n\nView Invitation: https://riya-ravi-wedding.netlify.app/`,
   )}`;
 
   return (

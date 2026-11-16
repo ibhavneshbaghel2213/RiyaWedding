@@ -36,17 +36,15 @@ export const CONFIG = {
       family: {
         welcome: [
           ["नानी-नाना", "श्रीमती छाया देवी – श्री लक्ष्मण सिंह बघेल", "Maternal grandparents", "Smt. Chhaya Devi – Shri Lakshman Singh Baghel"],
-          ["मामी-मामा", "श्रीमती कुसुम – श्री रामेंद्र सिंह बघेल", "Aunt & uncle", "Smt. Kusum – Shri Ramendra Singh Baghel"],
-          ["ताई जी-ताऊ जी", "श्रीमती सुमन – श्री अशोक कुमार पाल", "Aunt & uncle", "Smt. Suman – Shri Ashok Kumar Pal"],
-          ["बुआ-फूफा जी", "श्रीमती जयश्री – श्री राजेश बघेल जी<br>श्रीमती निशा – श्री विवस पाल जी [पुष्टि अपेक्षित]", "Aunts & uncles", "Smt. Jayshree – Shri Rajesh Baghel<br>Smt. Nisha – Shri Diwas Pal"],
+          ["मामी-मामा", "श्रीमती कुसुम – श्री रामेंद्र सिंह बघेल", "Mami Ji & Mama Ji", "Smt. Kusum – Shri Ramendra Singh Baghel"],
+          ["बुआ-फूफा जी", "श्रीमती जयश्री – श्री राजेश बघेल जी<br>श्रीमती निशा – श्री विवस पाल जी [पुष्टि अपेक्षित]", "Bua & Fufa Ji", "Smt. Jayshree – Shri Rajesh Baghel<br>Smt. Nisha – Shri Diwas Pal"],
           ["दीदी-जीजा जी", "श्रीमती शिवानी – श्री रणविजय जी<br>श्रीमती रवीना – श्री नरेंद्र जी", "Sisters & brothers-in-law", "Smt. Shivani – Shri Ranvijay<br>Smt. Ravina – Shri Narendra"],
           ["भाभी-भैया", "श्रीमती सपना – डॉ० शिवम् पाल<br>श्रीमती श्रृष्टि – श्री रोहित सिंह", "Sisters-in-law & brothers", "Smt. Sapna – Dr. Shivam Pal<br>Smt. Shrishti – Shri Rohit Singh"]
         ],
         regards: ["सन्तोष कुमार पाल", "डॉ० तरुण पाल", "पवन पाल"],
         regardsEnglish: ["Santosh Kumar Pal", "Dr. Tarun Pal", "Pawan Pal"],
         wellWishers: " उत्कर्ष, संचित, बाबी, बंटी, प्रियम, हनी, सखी, रुनझुन, मानसी, अनुषा, कनुप्रिया, किट्टू एवं समस्त पाल परिवार व मित्रगण।",
-        wellWishersEnglish: "Utkarsh, Sanchit, Babi, Bunty, , Priyam,Kanupriya, Kittu, the entire Pal family and friends."
-
+        wellWishersEnglish: "Utkarsh, Sanchit, Bobby, Bunty, , Priyam,Kanupriya, Kittu, the entire Pal family and friends."
       },
       children: ["आदि", "रिदित", "हनु", "गनु", "ओजू"],
       childrenEnglish: ["Adi", "Ridhit", "Hanu", "Ganu", "Oju"],

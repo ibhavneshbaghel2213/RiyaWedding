@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useWedding, RichText, InvitationCopy, Events, WelcomeFamily, RegardsFamily, Gallery, Petals } from "./components.jsx";
+import { useWedding, RichText, InvitationCopy, Events, Petals } from "./components.jsx";
 import { CONFIG } from "./config.js";
 
 export default function InvitationMarkup() {
@@ -76,7 +76,7 @@ export default function InvitationMarkup() {
 <p className="hero-guest" id="guestGreeting">{values.guestGreeting}</p>
 <div className="ornate-divider" aria-hidden="true"><span>{"❋"}</span>
 </div>
-<div className="hero-actions"><a className="btn" href="#blessings" onClick={startSound}><span>{t("आमंत्रण खोलें", "Open invitation")}</span>
+<div className="hero-actions"><a className="btn" href="#invitation" onClick={startSound}><span>{t("आमंत्रण खोलें", "Open invitation")}</span>
 <span aria-hidden="true">{"❧"}</span>
 </a>
 </div>
@@ -86,19 +86,7 @@ export default function InvitationMarkup() {
 <button className="btn sound-btn" id="soundToggle" type="button" onClick={toggleSound} disabled={!CONFIG.audioPath} aria-pressed={playing}><span className="sound-icon" aria-hidden="true">{"♪"}</span>
 <span id="soundLabel">{values.soundLabel}</span>
 </button>
-<main id="main"><section className="section blessing" id="blessings"><div className="section-inner reveal"><p className="eyebrow">{t("शुभारम्भ", "Auspicious beginning")}</p>
-<h2 className="section-heading">{t("मंगल वचन", "Blessings")}</h2>
-<div className="ornate-divider" aria-hidden="true"><span>{"❋"}</span>
-</div>
-<div className="blessings-grid">
-<blockquote className="verse" lang="hi"><span className="verse-mark" aria-hidden="true">ॐ</span>
-<span className="verse-text">वक्रतुण्ड महाकाय, सूर्यकोटि समप्रभः। निर्विघ्नं कुरु मे देव, सर्व कार्येषु सर्वदा॥</span>
-<span className="verse-text">विघ्न हरण मंगल करण गौरी पुत्र गणेश। प्रथम निमंत्रण आपको ब्रह्मा विष्णु महेश॥</span>
-</blockquote>
-</div>
-</div>
-</section>
-<section className="section" id="invitation"><div className="section-inner reveal"><p className="eyebrow">{t("स्नेहिल निमंत्रण", "A heartfelt invitation")}</p>
+<main id="main"><section className="section" id="invitation"><div className="section-inner reveal"><p className="eyebrow">{t("स्नेहिल निमंत्रण", "A heartfelt invitation")}</p>
 <InvitationCopy /></div>
 </section>
 <section className="section" id="couple"><div className="section-inner reveal"><p className="eyebrow">{t("दो परिवार, एक मंगल बंधन", "Two families, one joyful union")}</p>
@@ -109,7 +97,7 @@ export default function InvitationMarkup() {
 <h3 id="brideName">{values.brideName}</h3>
 <RichText as="p" className="relation" html={values.brideFamily} /><p className="address" id="brideAddress">{values.brideAddress}</p>
 </article>
-<div className="couple-photo-frame"><img className="couple-photo" loading="lazy" decoding="async" src="/assets/7Y9A8599.JPG" alt={t("वधू और वर का साथ में फोटो", "Bride and groom together")} /></div>
+<div className="couple-photo-frame"><img className="couple-photo" loading="lazy" decoding="async" src="/assets/WhatsApp%20Image%202026-11-16%20at%204.31.35%20PM.jpeg" alt={t("वधू और वर का रेखाचित्र", "Illustration of the bride and groom")} /></div>
 <article className="person-card"><p className="person-role">{t("वर", "Groom")}</p>
 <h3 id="groomName">{values.groomName}</h3>
 <RichText as="p" className="relation" html={values.groomFamily} /><p className="address" id="groomAddress">{values.groomAddress}</p>
@@ -160,38 +148,7 @@ export default function InvitationMarkup() {
 </div>
 </div>
 </section>
-<section className="section" id="greetings"><div className="section-inner reveal"><p className="eyebrow">{t("सप्रेम", "With love")}</p>
-<h2 className="section-heading">{t("परिवार की ओर से", "From our family")}</h2>
-<div className="ornate-divider" aria-hidden="true"><span>{"❋"}</span>
-</div>
-<div className="family-block"><h3 className="family-label">{t("स्वागतोत्सुक", "Warmly welcoming you")}</h3>
-<div className="family-grid" id="welcomeFamily"><WelcomeFamily /></div>
-<h3 className="family-label">{t("विनीत", "With regards")}</h3>
-<div className="family-grid" id="regardsFamily"><RegardsFamily /></div>
-<h3 className="family-label">{t("दर्शनाभिलाषी", "With best wishes")}</h3>
-<div className="family-card" id="wellWishers" style={{textAlign: "center"}}>{values.wellWishers}</div>
-</div>
-</div>
-</section>
-<section className="section" id="kids"><div className="section-inner reveal"><p className="eyebrow">{t("नन्हे आमंत्रण", "A little invitation")}</p>
-<h2 className="section-heading">{t("बाल आकांक्षा", "A note from the little ones")}</h2>
-<div className="ornate-divider" aria-hidden="true"><span>{"❋"}</span>
-</div>
-<div className="kids-card">
-<div className="kids-icon" aria-hidden="true">{"✿　♡　✿"}</div>
-<blockquote><RichText html={t("नन्हे-नन्हे पाँव हमारे कैसे आयें बुलाने को,<br>बुआ/मौसी की शादी में भूल न जाना आने को।", "Our tiny feet are too small to come and call on you,<br>please don't forget to join us for our aunt's wedding too!")} /></blockquote>
-<p className="kids-names" id="kidsNames">{values.kidsNames}</p>
-</div>
-</div>
-</section>
 <section className="section" id="request"><div className="section-inner reveal"><p className="request-note">{t("कृपया महिलायें इस कुमकुम पत्रिका को व्यक्तिगत आमंत्रण समझें।", "We warmly request all ladies to accept this kumkum invitation as a personal invitation.")}</p>
-</div>
-</section>
-<section className="section" id="gallery"><div className="section-inner reveal"><p className="eyebrow">{t("यादों की झलक", "A glimpse of memories")}</p>
-<h2 className="section-heading">{t("फोटो गैलरी", "Photo gallery")}</h2>
-<div className="ornate-divider" aria-hidden="true"><span>{"❋"}</span>
-</div>
-<Gallery />
 </div>
 </section>
 </main>
@@ -199,13 +156,14 @@ export default function InvitationMarkup() {
 <h2 className="section-heading">{t("आपके अपने", "Your hosts")}</h2>
 <div className="ornate-divider" aria-hidden="true"><span>{"❋"}</span>
 </div>
-<RichText as="p" className="footer-address" html={values.footerHosts} /><p><a id="phoneOne" href={"tel:" + CONFIG.phones[0]}>{CONFIG.phones[0]}</a>
-{"·"}<a id="phoneTwo" href={"tel:" + CONFIG.phones[1]}>{CONFIG.phones[1]}</a>
-</p>
+<RichText as="p" className="footer-address" html={values.footerHosts} />
 <a className="btn btn-outline" id="shareLink" target="_blank" rel="noopener noreferrer" href={shareUrl}><span aria-hidden="true">{"↗"}</span>
 <span>{t("WhatsApp पर निमंत्रण साझा करें", "Share on WhatsApp")}</span>
 </a>
-<p className="footer-credit">{t("आपकी उपस्थिति ही हमारा सबसे बड़ा उपहार है।", "Your presence is the greatest gift of all.")}</p>
+<p className="footer-credit">{t("पाल परिवार की ओर से स्नेह, सादर एवं शुभकामनाएँ।", "With love, regards and best compliments from Pal Family.")}</p>
+<p className="footer-phones"><a id="phoneOne" href={"tel:" + CONFIG.phones[0]}>{CONFIG.phones[0]}</a>
+{" · "}<a id="phoneTwo" href={"tel:" + CONFIG.phones[1]}>{CONFIG.phones[1]}</a>
+</p>
 </div>
 </footer>
 

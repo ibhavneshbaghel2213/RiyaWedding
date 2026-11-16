@@ -37,13 +37,13 @@ The Netlify rewrite serves the built `app.html` at the site root. The current we
 - `app.html` is the page shell loaded by Vite and the production server. It loads `src/main.jsx`, which mounts the React app.
 - `src/config.js` contains the wedding names, family details, dates, event schedule, venue, phone numbers, music path, and map link.
 - `src/InvitationMarkup.jsx` defines the page sections and the shared bride-and-groom photo.
-- `src/components.jsx` renders the event cards, family details, and the five-photo gallery.
+- `src/components.jsx` renders the event cards. The family and gallery sections are currently disabled and are not rendered on the page.
 - `public/assets/` contains the photos and music served at `/assets/...`.
 - `src/styles.css` controls the page's appearance and responsive layouts.
 
 `archive-invitation.html` is an old standalone version kept for reference. It is not the page loaded by the current Vite app. `index.html` is also not the configured production build entry; edit the React sources above for changes to the live website.
 
-To personalize the invitation, edit `src/config.js` for wedding details, `src/InvitationMarkup.jsx` for page content and the couple photo, and `src/components.jsx` for gallery photos and reusable sections.
+To personalize the invitation, edit `src/config.js` for wedding details and `src/InvitationMarkup.jsx` for page content and the couple photo. The gallery component and photo list remain in `src/components.jsx` if you want to enable the gallery again later.
 
 Before publishing:
 

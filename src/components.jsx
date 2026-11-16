@@ -43,8 +43,8 @@ export function WeddingProvider({ children }) {
     wellWishers: t(CONFIG.family.wellWishers, CONFIG.family.wellWishersEnglish),
     kidsNames: (language === 'hi' ? CONFIG.children : CONFIG.childrenEnglish).join(', '),
     footerHosts: language === 'hi'
-      ? `<strong>${CONFIG.hosts[0]}</strong> (${CONFIG.hostTitle})<br><strong>${CONFIG.hosts[1]}</strong><br>${splitHostAddress(CONFIG.hostAddress)}`
-      : `<strong>${CONFIG.hostsEnglish[0]}</strong> (${CONFIG.hostTitleEnglish})<br><strong>${CONFIG.hostsEnglish[1]}</strong><br>${splitHostAddress(CONFIG.hostAddressEnglish)}`,
+      ? `<strong>${CONFIG.hosts[0]}</strong>${CONFIG.hostTitle ? ` (${CONFIG.hostTitle})` : ''}<br><strong>${CONFIG.hosts[1]}</strong><br>${splitHostAddress(CONFIG.hostAddress)}`
+      : `<strong>${CONFIG.hostsEnglish[0]}</strong>${CONFIG.hostTitleEnglish ? ` (${CONFIG.hostTitleEnglish})` : ''}<br><strong>${CONFIG.hostsEnglish[1]}</strong><br>${splitHostAddress(CONFIG.hostAddressEnglish)}`,
     soundLabel: playing
       ? t('ध्वनि बंद करें', 'Sound Off')
       : autoplayBlocked
@@ -160,6 +160,7 @@ export function InvitationCopy() {
   if (language === 'en') {
     return (
       <blockquote className="invite-copy" lang="en">
+        <span className="invite-salutation">Dear Friends &amp; Family,</span><br />
         With the blessings of God and our elders, we are delighted to invite you to the wedding of <strong>Rishita and Ravi</strong>. Your presence and blessings will make this special day even more memorable. Please join us in celebrating their new journey and bless the couple.
       </blockquote>
     );
@@ -167,8 +168,9 @@ export function InvitationCopy() {
 
   return (
     <blockquote className="invite-copy" lang="hi">
+      <span className="invite-salutation">प्रिय मित्रों एवं परिवारजनों,</span><br />
       {t(
-        'आत्मीय स्वजन, परमपिता परमात्मा की असीम अनुकम्पा एवं पूर्वजों के आशीर्वाद से ',
+        'परमपिता परमात्मा की असीम अनुकम्पा एवं पूर्वजों के आशीर्वाद से ',
         'Dearest family and friends, by the boundless grace of the Almighty and the blessings of our ancestors, we joyfully invite you to the wedding of ',
       )}
       <strong>{t(`${CONFIG.bride.short} एवं ${CONFIG.groom.short}`, `${CONFIG.bride.english} and ${CONFIG.groom.english}`)}</strong>
@@ -204,7 +206,9 @@ export function Events() {
   const { language, t, mapsUrl } = useWedding();
   return (
     <div className="event-list">
-      {CONFIG.events.map(event => (
+      {CONFIG.events.map(event => {
+        const directionsUrl = event.mapsLink || (event.main ? mapsUrl : '#');
+        return (
         <article className={`event${event.main ? ' main-event' : ''}`} key={`${event.dateISO}-${event.english}`}>
           <div className="event-topline">
             <span className="event-icon" aria-hidden="true">{event.icon}</span>
@@ -219,19 +223,20 @@ export function Events() {
           </p>
           <div className="event-details">
             <p className="event-meta"><span aria-hidden="true">◷</span>{language === 'hi' ? event.dateHindi : event.dateEnglish}</p>
-            <p className="event-meta"><span aria-hidden="true">◴</span>
-              {(language === 'hi' ? event.time : event.timeEnglish).startsWith('[')
-                ? t('समय शीघ्र घोषित होगा', 'Time to be announced')
-                : language === 'hi' ? event.time : event.timeEnglish}
-            </p>
-            <p className="event-meta"><span aria-hidden="true">⌖</span>{language === 'hi' ? CONFIG.venue.name : CONFIG.venue.nameEnglish}</p>
+            {(language === 'hi' ? event.time : event.timeEnglish) && (
+              <p className="event-meta"><span aria-hidden="true">◴</span>{language === 'hi' ? event.time : event.timeEnglish}</p>
+            )}
+            {(language === 'hi' ? event.venue : event.venueEnglish) && (
+              <p className="event-meta"><span aria-hidden="true">⌖</span>{language === 'hi' ? event.venue : event.venueEnglish}</p>
+            )}
           </div>
           <div className="event-actions">
             <CalendarLink event={event} />
-            {mapsUrl !== '#' && <a className="event-directions" href={mapsUrl} target="_blank" rel="noopener noreferrer">{t('दिशा देखें', 'Get directions')} <span aria-hidden="true">→</span></a>}
+            {directionsUrl !== '#' && <a className="event-directions" href={directionsUrl} target="_blank" rel="noopener noreferrer">{t('दिशा देखें', 'Get directions')} <span aria-hidden="true">→</span></a>}
           </div>
         </article>
-      ))}
+        );
+      })}
     </div>
   );
 }

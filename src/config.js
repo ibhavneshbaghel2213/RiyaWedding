@@ -5,8 +5,8 @@ export const CONFIG = {
         english: "Rishita ",
         full: "ऋषिता पाल ",
         fullEnglish: "Rishita Pal ",
-        family: "सुपुत्री स्व. श्रीमती सुशीला देवी – श्री राधेलाल पाल (दादा-दादी पक्ष)<br>सुपुत्री श्रीमती उषा – श्री सुरेन्द्र कुमार पाल (प्रधानाध्यापक)",
-        familyEnglish: "Daughter of Smt. Usha and Shri Surendra Kumar Pal (Principal)",
+        family: "सुपुत्री स्व. श्रीमती सुशीला देवी – श्री राधेलाल पाल (दादा-दादी पक्ष)<br>सुपुत्री श्रीमती उषा – श्री सुरेन्द्र कुमार पाल",
+        familyEnglish: "Daughter of Smt. Usha and Shri Surendra Kumar Pal",
         address: "रेलवे अण्डर ब्रिज के पास, क्योटरा-बाँदा (उ.प्र.)",
         addressEnglish: "Near Railway Under Bridge, Kyotara, Banda (U.P.)"
       },
@@ -15,8 +15,8 @@ export const CONFIG = {
         english: "Ravi",
         full: "रवि पाल",
         fullEnglish: " Ravi Pal",
-        family: "सुपुत्र श्रीमती शीला देवी – श्री दिगंबर नाथ जी",
-        familyEnglish: "Son of Smt. Sheela Devi and Shri Digambar Nath",
+        family: "सुपुत्र श्रीमती शीला देवी – श्री दिगंबर नाथ सिंह जी",
+        familyEnglish: "Son of Smt. Sheela Devi and Shri Digambar Nath Singh",
         address: "पुरुषोत्तम बिहार&, गोले का मंदिर, ग्वालियर (म.प्र.)",
         addressEnglish: "Purushottam Vihar, Gole Ka Mandir, Gwalior (M.P.)"
       },
@@ -30,8 +30,8 @@ export const CONFIG = {
       venue: {
         name: "मंगलम् परिणयोत्सव उद्यान",
         nameEnglish: "Mangalam Parinayotsav Udyan",
-        address: "किरन कॉलेज चौराहे के पास, कटरा-बाँदा (उ.प्र.)",
-        addressEnglish: "Near Kiran College Crossing, Katra, Banda (U.P.)"
+        address: "किरण कॉलेज चौराहे के पास, कटरा रोड, बाँदा (उ.प्र.)",
+        addressEnglish: "Near Kiran College Chauraha, Katra Road, Banda (U.P.)"
       },
       family: {
         welcome: [
@@ -49,10 +49,10 @@ export const CONFIG = {
       children: ["आदि", "रिदित", "हनु", "गनु", "ओजू"],
       childrenEnglish: ["Adi", "Ridhit", "Hanu", "Ganu", "Oju"],
       hosts: ["सुरेन्द्र कुमार पाल", "ऋषभ पाल (ऋषि)"],
-      hostTitle: "प्रधानाध्यापक",
+      hostTitle: "",
       hostAddress: "रेलवे अण्डर ब्रिज के पास, किरन कॉलेज रोड, क्योटरा-बाँदा (उ.प्र.)",
       hostsEnglish: ["Surendra Kumar Pal", "Rishabh Pal (Rishi)"],
-      hostTitleEnglish: "Principal",
+      hostTitleEnglish: "",
       hostAddressEnglish: "Near Railway Under Bridge, Kiran College Road, Kyotara, Banda (U.P.)",
       whatsappNumber: "ADD_WHATSAPP_NUMBER",
       mapsLink: "https://www.google.com/maps/dir//Mangalam+Guest+House,+katra,+Banda,+Uttar+Pradesh+210001/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x399ccf0065156dbf:0x3ff8a25d9d7e022?entry=s&ved=1t:269504&ictx=111",
@@ -60,9 +60,57 @@ export const CONFIG = {
       audioPath: "/assets/prettyjohn1-wedding-wedding-music_35sec-487336.mp3",
       phones: ["9695064270", "8299344934"],
       events: [
-        { name: "मण्डपाच्छादन", english: "Mandap Ceremony", dateISO: "2026-12-09", dateHindi: "०९ दिसम्बर २०२६, बुधवार", dateEnglish: "Wednesday, 9 December 2026", time: "[समय जोड़ें]", timeEnglish: "[Add time]", icon: "❋" },
-        { name: "मातृकापूजन", english: "Matrika Pujan", dateISO: "2026-12-10", dateHindi: "१० दिसम्बर २०२६, गुरुवार", dateEnglish: "Thursday, 10 December 2026", time: "[समय जोड़ें]", timeEnglish: "[Add time]", icon: "ॐ" },
-        { name: "शुभ विवाह", english: "Wedding ceremony", dateISO: "2026-12-11", dateHindi: "११ दिसम्बर २०२६, शुक्रवार", dateEnglish: "Friday, 11 December 2026", time: "[समय जोड़ें]", timeEnglish: "[Add time]", icon: "♕", main: true },
-        { name: "विदाई", english: "Bidai", dateISO: "2026-12-12", dateHindi: "१२ दिसम्बर २०२६, शनिवार", dateEnglish: "Saturday, 12 December 2026", time: "[समय जोड़ें]", timeEnglish: "[Add time]", icon: "❀" }
+        {
+          name: "मण्डप एवं हल्दी",
+          english: "Mandap & Haldi",
+          dateISO: "2026-12-09",
+          dateHindi: "०९ दिसम्बर २०२६, बुधवार",
+          dateEnglish: "Wednesday, 9 December 2026",
+          time: "सायं ५ बजे से",
+          timeEnglish: "5 pm onwards",
+          venue: "निवास स्थान — रेलवे अण्डर ब्रिज के पास, क्योटरा, बाँदा",
+          venueEnglish: "Home Residence — Near Railway Under Bridge, Kyotara, Banda",
+          mapsLink: "https://maps.app.goo.gl/mgdZs4fVAUcLcY548",
+          icon: "❋"
+        },
+        {
+          name: "मेहंदी",
+          english: "Mehendi",
+          dateISO: "2026-12-10",
+          dateHindi: "१० दिसम्बर २०२६, गुरुवार",
+          dateEnglish: "Thursday, 10 December 2026",
+          time: "सायं ६ बजे से",
+          timeEnglish: "6 pm onwards",
+          venue: "निवास स्थान — रेलवे अण्डर ब्रिज के पास, क्योटरा, बाँदा",
+          venueEnglish: "Home Residence — Near Railway Under Bridge, Kyotara, Banda",
+          mapsLink: "https://maps.app.goo.gl/mgdZs4fVAUcLcY548",
+          icon: "❋"
+        },
+        {
+          name: "शुभ विवाह",
+          english: "Wedding Ceremony",
+          dateISO: "2026-12-11",
+          dateHindi: "११ दिसम्बर २०२६, शुक्रवार",
+          dateEnglish: "Friday, 11 December 2026",
+          time: "सायं ७ बजे से",
+          timeEnglish: "7 pm onwards",
+          venue: "मंगलम् मैरिज हॉल, किरण कॉलेज के पास, कटरा रोड, बाँदा (उ.प्र.)",
+          venueEnglish: "Mangalam Marriage Hall, near Kiran College, Katra Road, Banda (U.P.)",
+          icon: "♕",
+          main: true
+        },
+        {
+          name: "विदाई",
+          english: "Bidai",
+          dateISO: "2026-12-12",
+          dateHindi: "१२ दिसम्बर २०२६, शनिवार",
+          dateEnglish: "Saturday, 12 December 2026",
+          time: "",
+          timeEnglish: "",
+          venue: "निवास स्थान",
+          venueEnglish: "Home Residence",
+          mapsLink: "https://maps.app.goo.gl/mgdZs4fVAUcLcY548",
+          icon: "❀"
+        }
       ]
     };

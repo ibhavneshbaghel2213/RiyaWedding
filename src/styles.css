@@ -187,10 +187,10 @@
     .relation { margin: .35rem auto; font-size: .91rem; line-height: 1.85; }
     .address { margin: .75rem 0 0; padding-top: .7rem; border-top: 1px solid #eadfce; color: var(--muted); font-size: .86rem; }
     .couple-photo-frame {
-      justify-self: center; width: min(100%, 300px); aspect-ratio: 4 / 5; overflow: hidden;
+      justify-self: center; width: min(100%, 300px); aspect-ratio: 4 / 5; overflow: hidden; background: #080709;
       border: 4px solid var(--gold); outline: 1px solid rgba(213,170,90,.5); box-shadow: var(--shadow);
     }
-    .couple-photo { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 38%; transform: scale(1.1); }
+    .couple-photo { display: block; width: 100%; height: 100%; object-fit: contain; }
     .events-intro { max-width: 520px; margin: .8rem auto 0; text-align: center; color: var(--muted); font: italic 1rem var(--display); }
     .schedule-divider { display: flex; align-items: center; justify-content: center; gap: .55rem; margin: 2rem auto 2.4rem; color: var(--gold); }
     .schedule-divider::before, .schedule-divider::after { content: ""; width: min(25vw, 190px); height: 1px; background: linear-gradient(90deg, transparent, var(--gold)); }
@@ -301,6 +301,9 @@
     .footer a { color: #f1d99e; text-decoration-thickness: 1px; text-underline-offset: 3px; }
     .footer .btn { color: white; border-color: var(--gold); margin-top: 1rem; }
     .footer-credit { color: #d7bdaf; font: italic .86rem var(--display); margin-top: 1.8rem; }
+    .footer-phones { margin: .55rem 0 0; color: #f0d593; font: 500 .9rem var(--display); letter-spacing: .04em; }
+    .footer-phones a { color: inherit; text-decoration: none; }
+    .footer-phones a:hover { text-decoration: underline; text-underline-offset: .2em; }
     .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
     .reveal.visible { opacity: 1; transform: none; }
     .reveal.visible .event { animation: card-arrive .65s both; }
@@ -410,7 +413,7 @@
       text-shadow: 0 2px 24px rgba(213,170,90,.16); margin: 0; padding: 0 .4rem;
     }
     .hero h1:lang(hi) { font-family: var(--heading-hi); font-style: normal; font-size: clamp(2.4rem, 9vw, 4.7rem); }
-    .hero-amp { color: var(--gold); font-size: .72em; font-weight: 400; }
+    .hero-amp { margin-inline: .2em; color: var(--gold); font-size: .72em; font-weight: 400; }
     .mandala-wrap { max-width: 680px; min-height: clamp(180px, 30vw, 260px); margin: .15rem auto .3rem; }
     .mandala { width: min(76vw, 330px); height: min(76vw, 330px); opacity: .4; filter: drop-shadow(0 0 25px rgba(213,170,90,.16)); }
     .hero-date { color: #f1e2cf; font: 500 1.08rem var(--display); letter-spacing: .03em; margin: .5rem 0 .8rem; }

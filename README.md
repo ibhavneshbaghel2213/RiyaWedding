@@ -20,6 +20,16 @@ npm start
 
 The Express server serves the production build and the RSVP API at `http://localhost:3000` (or `PORT`).
 
+## Deploy to Netlify
+
+The repository includes `netlify.toml` with the production build command and `dist` publish directory. To deploy:
+
+1. Push this project to a GitHub repository.
+2. In Netlify, choose **Add new site** → **Import an existing project**, then authorize GitHub and select the repository.
+3. Keep the detected build settings (`npm run build` and `dist`) and choose **Deploy site**.
+
+The Netlify rewrite serves the built `app.html` at the site root. The current website is static and does not use the RSVP API. The optional Express `/api/rsvp` endpoint in `server.js` is not deployed by this static-site configuration.
+
 ## Personalizing the invitation
 
 ## Where the website gets its content
